@@ -41,3 +41,11 @@ phone varchar(13),
 department varchar(100) not null default 'B.E',
 address varchar(250) not null default 'Banglore'
 select * from employee_payroll
+
+sp_rename 'employee_payroll.salary' , 'basic_pay'
+
+alter table employee_payroll add
+deduction float ,
+taxable_pay float,
+incomeTax float,
+net_pay float;
